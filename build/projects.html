@@ -11,16 +11,12 @@
             font-family: 'Roboto', sans-serif;
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body class="min-h-screen bg-slate-50 dark:bg-black dark:text-white">
     <header class="bg-teal-700 text-white stinky top-0 z-10">
         <section class="max-w-4xl mx-auto p-4 flex justify-between items-center">
             <a href="#" class="text-3xl font-medium">Christopher Doucette</a>
-            <!-- <div>
-                <button id="mobile-open-button" class="text-3xl sm:hidden focus:outline-none">
-                    &#9776;
-                </button>
-            </div> -->
             <nav>
                 <ul class="flex space-x-4">
                     <li><a href="index.html" class="hover:underline">About</a></li>
@@ -40,7 +36,12 @@
                             <img src="../images/truck.jpg" alt="truck.jpg" class="w-full h-32 object-cover rounded mb-4">
                             <h3 class="text-xl font-semibold mb-2">Project One</h3>
                             <p class="text-gray-700 dark:text-gray-300 mb-4">Analayzing trucker trips dataset using pandas and numpy</p>
-                            <a href="project-one.html" class="text-teal-700 dark:text-teal-400 hover:underline">View Project</a>
+                            <div class="flex justify-between mb-3">
+                                <a href="project-one.html" class="text-teal-700 dark:text-teal-400 hover:underline mr-4">View Project</a>
+                                <a href="notebooks/project-one/Project-One-Trucker-Trips-Dataset.ipynb" class="text-teal-700 dark:text-teal-400 hover:underline" download>
+                                    <i class="fa fa-download"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </section>
