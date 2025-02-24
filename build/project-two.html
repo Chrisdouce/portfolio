@@ -14592,7 +14592,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div>
-<img src="../images/flower.jpg" alt="flower image" width="30%"/>
+<img src="../images/flower.jpg" alt="flower image" width="20%"/>
 </div>
 </div>
 </div>
@@ -14616,7 +14616,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Flowers are a common in more ways than you think. From displays of affection to enviormental impact, flowers are needed. Iris flower data set is a very popular dataset dating back to 1950s when the paper, "", was created to demonstrate how machine learning works. In this project, we'll be diving into prediciting flowers based on their diffrent aspects.</p>
+<p>Flowers play an essential role in our lives, from expressing emotions to contributing to environmental sustainability. Among them, the Iris flower holds a special place—not just in nature, but also in the world of data science. The Iris dataset is one of the most well-known datasets, first introduced in R.A. Fisher's 1936 paper, <i>The Use of Multiple Measurements in Taxonomic Problems</i>. This dataset has since become a fundamental resource in machine learning and statistical classification. It is widely used for testing algorithms and can be accessed through the UCI Machine Learning Repository.</p>
 
 </div>
 </div>
@@ -14628,11 +14628,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>As mentioned above, we'll be using the <a href="https://www.kaggle.com/datasets/uciml/iris">iris dataset</a>. It will be used predict flower specis and also test to see efficient our predications are. I also want to use the dataset to target something else like the biggest pedals and spetal.</p>
+<p>As mentioned above, we'll be using the <a href="https://www.kaggle.com/datasets/uciml/iris">iris dataset</a> to predict flower species and evaluate the efficiency of our predictions. Additionally, I aim to explore other aspects of the dataset, such as identifying flowers with the largest petals and sepals and analyzing their significance.</p>
 <ul>
-<li>t</li>
-<li>t</li>
-<li>t</li>
+<li>Which classification model performs best in predicting flower species?</li>
+<li>How do petal and sepal sizes vary among different species?</li>
+<li>Can we use petal and sepal measurements to group flowers using clustering methods?</li>
 </ul>
 
 </div>
@@ -14645,7 +14645,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The dataset itself is really straight forward with only 4 features and 150 rows. Here are all the features in detail:</p>
+<p>The dataset itself is straightforward with only 4 features and 150 rows. The dataset is evenly distributed among the three species (50 samples per class). Here are all the features in detail:</p>
 <p><table>
     <tr>
         <td><strong>Feature</strong></td>
@@ -14676,7 +14676,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
         <td>Species of the iris. Either being Iris-setosa, Iris-versicolor, or Iris-virginica</td>
     </tr>
 </table>
-As a little refresher, the sepal is the leaf-like parts that enclose and protect the flower bud, and the petal is the modified leaf that surrounds the reproductive parts of a flower and usually contains the color.</p>
+As a little refresher, the sepal is the leaf-like part that encloses and protects the flower bud, and the petal is the modified leaf that surrounds the reproductive parts of a flower and usually contains the color.</p>
 
 </div>
 </div>
@@ -14686,7 +14686,7 @@ As a little refresher, the sepal is the leaf-like parts that enclose and protect
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Imports</span>
@@ -14694,6 +14694,7 @@ As a little refresher, the sepal is the leaf-like parts that enclose and protect
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">sklearn</span> <span class="k">as</span> <span class="nn">sk</span>
 </pre></div>
 
      </div>
@@ -14706,7 +14707,7 @@ As a little refresher, the sepal is the leaf-like parts that enclose and protect
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#dataset</span>
@@ -14729,7 +14730,7 @@ As a little refresher, the sepal is the leaf-like parts that enclose and protect
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
 
 
 
@@ -14981,7 +14982,7 @@ dtype: int64
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Checking-types">Checking types<a class="anchor-link" href="#Checking-types">&#182;</a></h3>
+<h3 id="Checking-for-unusual-types">Checking for unusual types<a class="anchor-link" href="#Checking-for-unusual-types">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -15039,7 +15040,7 @@ dtype: object</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Types also aren't an issue which confirms the db looks okay, for now.</p>
+<p>Types also aren't an issue which should confirm the db looks okay, for now.</p>
 
 </div>
 </div>
@@ -15051,7 +15052,7 @@ dtype: object</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Basic-visualization">Basic visualization<a class="anchor-link" href="#Basic-visualization">&#182;</a></h2><hr>
+<h2 id="Modeling">Modeling<a class="anchor-link" href="#Modeling">&#182;</a></h2><hr>
 
 </div>
 </div>
@@ -15063,7 +15064,82 @@ dtype: object</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>One last thing before we start using a ML model, lets find visualize some of the data.</p>
+<p>Since this is a classification issue, we'll be using the k-Nearest Neighbors (KNN) which should be good for a small dataset like this.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Visualization">Visualization<a class="anchor-link" href="#Visualization">&#182;</a></h2><hr>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Evaluation">Evaluation<a class="anchor-link" href="#Evaluation">&#182;</a></h2><hr>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Impact-&amp;-Implications">Impact &amp; Implications<a class="anchor-link" href="#Impact-&amp;-Implications">&#182;</a></h2><hr>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Storytelling">Storytelling<a class="anchor-link" href="#Storytelling">&#182;</a></h2><hr>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="References">References<a class="anchor-link" href="#References">&#182;</a></h2><hr>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li><a href="https://www.kaggle.com/datasets/uciml/iris">Iris Dataset</a></li>
+<li><a href="https://www.geeksforgeeks.org/iris-dataset/">Introduction facts</a></li>
+</ul>
 
 </div>
 </div>
